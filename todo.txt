@@ -31,4 +31,5 @@ InstallMethod( IsLieAbelian,
 
 
 Assumindo que temos sempre as StructureConstantsTables, é só pegar no que está a seguir a B:= Basis(L) e  fazer duas vezes, uma para cada tabela. Basta haver uma entrada não vazia que é falso.
+Para isto temos que perceber a coisa da Basis e a coisa de pedir a SCT diretamente da álgebra, maybe.
 
