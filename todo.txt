@@ -1,2 +1,34 @@
 This is a todo list of what will be implemented
 
+O método IsCompLieAbelian não deve ser nada de especial. Aqui está o LieAbelian normal:
+
+InstallMethod( IsLieAbelian,
+    "for a Lie algebra with known basis",
+    true,
+    [ IsAlgebra and IsLieAlgebra and HasBasis ], 0,
+    function( L )
+
+    local B,      # basis of `L'
+          T,      # structure constants table w.r.t. `B'
+          i,      # loop variable
+          j;      # loop variable
+
+    B:= Basis( L );
+    if not HasStructureConstantsTable( B ) then
+      TryNextMethod();
+    fi;
+
+    T:= StructureConstantsTable( B );
+    for i in T{ [ 1 .. Length( T ) - 2 ] } do
+      for j in i do
+        if not IsEmpty( j[1] ) then
+          return false;
+        fi;
+      od;
+    od;
+    return true;
+    end );
+
+
+Assumindo que temos sempre as StructureConstantsTables, é só pegar no que está a seguir a B:= Basis(L) e  fazer duas vezes, uma para cada tabela. Basta haver uma entrada não vazia que é falso.
+
