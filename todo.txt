@@ -38,7 +38,7 @@ Testes: o A não é abeliana, o B é
 T1:=EmptySCTable(3,0,"antisymmetric");
 T2:=EmptySCTable(3,0,"antisymmetric");
 SetEntrySCTable(T1,1,2,[1,3]);
-SetEntrySCTable(T1,1,2,[1,3]);
+SetEntrySCTable(T2,1,3,[1,2]);
 
 Q1:=EmptySCTable(3,0,"antisymmetric");
 Q2:=EmptySCTable(3,0,"antisymmetric");
