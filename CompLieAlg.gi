@@ -998,3 +998,34 @@ InstallGlobalFunction( TestMixedJacobi, function( T1,T2 )
 
     return true;
 end );
+
+
+InstallMethod( IsCompLieAbelian,
+    "for a Lie algebra with known basis",
+    true,
+    [ IsCompSCAlgebraObj ], 0,
+    function( L )
+
+    local T1,     # structure constants table 1
+          T2,     # structure constants table 2
+          i,      # loop variable
+          j;      # loop variable
+
+    T1 := ElementsFamily( FamilyObj(L) )!.sctable1;
+    T2 := ElementsFamily( FamilyObj(L) )!.sctable2;
+    for i in T1{ [ 1 .. Length( T1 ) - 2 ] } do
+      for j in i do
+        if not IsEmpty( j[1] ) then
+          return false;
+        fi;
+      od;
+    od;
+    for i in T2{ [ 1 .. Length( T2 ) - 2 ] } do
+      for j in i do
+        if not IsEmpty( j[1] ) then
+          return false;
+        fi;
+      od;
+    od;
+    return true;
+    end );
