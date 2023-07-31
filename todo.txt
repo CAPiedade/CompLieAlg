@@ -33,3 +33,20 @@ InstallMethod( IsLieAbelian,
 Assumindo que temos sempre as StructureConstantsTables, é só pegar no que está a seguir a B:= Basis(L) e  fazer duas vezes, uma para cada tabela. Basta haver uma entrada não vazia que é falso.
 Para isto temos que perceber a coisa da Basis e a coisa de pedir a SCT diretamente da álgebra, maybe.
 
+Testes: o A não é abeliana, o B é
+
+T1:=EmptySCTable(3,0,"antisymmetric");
+T2:=EmptySCTable(3,0,"antisymmetric");
+SetEntrySCTable(T1,1,2,[1,3]);
+SetEntrySCTable(T1,1,2,[1,3]);
+
+Q1:=EmptySCTable(3,0,"antisymmetric");
+Q2:=EmptySCTable(3,0,"antisymmetric");
+
+
+A:=CompLieAlgByStructureConstants(Rationals,T1,T2);
+B:=CompLieAlgByStructureConstants(Rationals,Q1,Q2);
+
+
+
+
