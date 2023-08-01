@@ -1010,22 +1010,28 @@ InstallMethod( IsCompLieAbelian,
           T2,     # structure constants table 2
           i,      # loop variable
           j;      # loop variable
-
-    T1 := ElementsFamily( FamilyObj(L) )!.sctable1;
-    T2 := ElementsFamily( FamilyObj(L) )!.sctable2;
-    for i in T1{ [ 1 .. Length( T1 ) - 2 ] } do
-      for j in i do
-        if not IsEmpty( j[1] ) then
-          return false;
-        fi;
+    if IsBound(L!.isCompLieAbelian) then
+      return L!.isCompLieAbelian;
+    else
+      T1 := ElementsFamily( FamilyObj(L) )!.sctable1;
+      T2 := ElementsFamily( FamilyObj(L) )!.sctable2;
+      for i in T1{ [ 1 .. Length( T1 ) - 2 ] } do
+        for j in i do
+          if not IsEmpty( j[1] ) then
+            L!.isCompLieAbelian := false;
+            return L!.isCompLieAbelian;
+          fi;
+        od;
       od;
-    od;
-    for i in T2{ [ 1 .. Length( T2 ) - 2 ] } do
-      for j in i do
-        if not IsEmpty( j[1] ) then
-          return false;
-        fi;
+      for i in T2{ [ 1 .. Length( T2 ) - 2 ] } do
+        for j in i do
+          if not IsEmpty( j[1] ) then
+            L!.isCompLieAbelian := false;
+            return L!.isCompLieAbelian;
+          fi;
+        od;
       od;
-    od;
-    return true;
+      L!.isCompLieAbelian := true;
+      return L!.isCompLieAbelian;
+    fi;
     end );
