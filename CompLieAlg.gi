@@ -1035,3 +1035,44 @@ InstallMethod( IsCompLieAbelian,
       return L!.isCompLieAbelian;
     fi;
     end );
+
+
+
+
+
+#############################################################################
+##
+##  MutableBasisOfCompProductSpace
+##
+##  Looking at it, it should work for two subalgebras or two ideals
+##  but we lack a method to define those yet.
+
+
+InstallMethod(MutableBasisOfCompProductSpace, 
+    "for full s. c. algebras",
+    [ IsCompFullSCAlgebra, IsCompFullSCAlgebra ],
+    function( U, V )
+    local inter, # intersection of left acting domains
+          u, v,  # loop over the bases
+          MB;    # mutable basis of the commutator subspace, result
+
+    if LeftActingDomain( U ) = LeftActingDomain( V ) then
+      inter:= LeftActingDomain( U );
+    else
+      inter:= Intersection2( LeftActingDomain( U ), LeftActingDomain( V ) );
+      U:= AsVectorSpace( inter, U );
+      V:= AsVectorSpace( inter, V );
+    fi;
+
+    MB:= MutableBasis( inter, [], Zero( U ) );
+    V:= BasisVectors( V  );
+    for u in BasisVectors( U ) do
+      for v in V do
+        CloseMutableBasis( MB, P1(u, v) );
+	CloseMutableBasis( MB, P2(u, v) );
+      od;
+    od;
+
+    # Return the result.
+    return [ MB, inter ];
+end );
