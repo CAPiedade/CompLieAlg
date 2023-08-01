@@ -1003,7 +1003,7 @@ end );
 InstallMethod( IsCompLieAbelian,
     "for a Lie algebra with known basis",
     true,
-    [ IsCompSCAlgebraObj ], 0,
+    [ IsCompFullSCAlgebra ], 0,
     function( L )
 
     local T1,     # structure constants table 1

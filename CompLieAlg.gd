@@ -60,7 +60,7 @@ DeclareOperation( "InverseOp1", [ IsCompSCAlgebraObj]);
 DeclareOperation( "InverseOp2", [ IsCompSCAlgebraObj]);
 DeclareGlobalFunction("CompLieAlgByStructureConstants");
 DeclareGlobalFunction("TestMixedJacobi");
-DeclareOperation("IsCompLieAbelian", [IsCompSCAlgebraObj]);
+DeclareOperation("IsCompLieAbelian", [IsCompFullSCAlgebra]);
 
 #############################################################################
 ##
