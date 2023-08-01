@@ -61,6 +61,7 @@ DeclareOperation( "InverseOp2", [ IsCompSCAlgebraObj]);
 DeclareGlobalFunction("CompLieAlgByStructureConstants");
 DeclareGlobalFunction("TestMixedJacobi");
 DeclareOperation("IsCompLieAbelian", [IsCompFullSCAlgebra]);
+DeclareOperation( "MutableBasisOfTwoProductSpace", [IsCompFullSCAlgebra, IsCompFullSCAlgebra]);
 
 #############################################################################
 ##
