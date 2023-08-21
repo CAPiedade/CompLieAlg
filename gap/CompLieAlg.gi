@@ -354,19 +354,6 @@ InstallMethod( \-,
     end );
 
 
-
-InstallMethod( \*one,
-    "for s. c. algebra elements in dense vector rep.",
-    IsIdenticalObj,
-    [ IsCompSCAlgebraObj and IsDenseCoeffVectorRep,
-      IsCompSCAlgebraObj and IsDenseCoeffVectorRep ],
-    function( x, y )
-    local F;
-    F:= FamilyObj( x );
-    return ObjByExtRep( F, SCTableProduct( F!.sctable1, x![1], y![1] ) );
-    end );
-
-
 InstallMethod( P1,
     "for s. c. algebra elements in dense vector rep.",
     IsIdenticalObj,

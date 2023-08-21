@@ -9,7 +9,7 @@
 SetPackageInfo( rec(
 
 PackageName := "CompLieAlg",
-Subtitle := "CompLieAlg is a GAP Package created to compute compatible Lie Algebras, taking two distinct "Lie bracket" operations.",
+Subtitle := "CompLieAlg is a GAP Package created to compute compatible Lie Algebras, taking two distinct 'Lie bracket' operations.",
 Version := "0.1",
 Date := "21/08/2023", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
@@ -67,7 +67,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "CompLieAlg is a GAP Package created to compute compatible Lie Algebras, taking two distinct "Lie bracket" operations.",
+  LongTitle := "CompLieAlg is a GAP Package created to compute compatible Lie Algebras, taking two distinct 'Lie bracket' operations.",
 ),
 
 Dependencies := rec(
