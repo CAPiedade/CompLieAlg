@@ -938,7 +938,7 @@ InstallGlobalFunction( TestMixedJacobi, function( T1,T2 )
 
     if not TJT1 = true then
       return [TJT1[1], TJT1[2], TJT1[3],TJT1 = true,TJT2 = true,false];
-    elif not TJT1 = true then
+    elif not TJT2 = true then
       return [TJT2[1], TJT2[2], TJT2[3],TJT1 = true,TJT2 = true,false];
     fi;
 
